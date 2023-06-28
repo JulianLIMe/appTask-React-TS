@@ -26,8 +26,8 @@
 .card-task button {
   background-color: transparent;
   position: absolute;
-  bottom: 50%;
-  left: 98%;
+  top: 1rem;
+  right: 1rem;
   font-weight: bolder;
   opacity: .4;
   cursor: pointer;

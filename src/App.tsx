@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Form from "./components/Form";
 import Tasks from "./components/Tasks";
+import Modal from "./components/Modal";
 import { ITask } from "./type";
 import "./App.css";
 
 function App(): JSX.Element {
   const [tasks, setTasks] = useState<ITask[]>([]);
+  const [openModal, setOpenModal] = useState<boolean>(false);
 
   const addTask = (task: ITask) => {
     const copy = [...tasks, task];
@@ -30,6 +32,7 @@ function App(): JSX.Element {
     <div className="container-app">
       <Form addTask={addTask} />
       <Tasks allTasks={tasks} deleteTask={deleteTask} />
+      <Modal openModal={openModal} />
     </div>
   );
 }
