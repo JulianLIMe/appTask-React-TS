@@ -15,18 +15,21 @@ function App(): JSX.Element {
     setTasks(copy);
   };
 
-  /* useEffect(() => {
+  const deleteTask = (task: ITask) => {
     const copy = [...tasks];
-    copy.sort((a, b) => {
-      return b.intensity - a.intensity;
-    });
-    setTasks(copy);
-  }, [tasks]); */
+    const result = copy.filter(
+      (e) =>
+        e.title != task.title &&
+        e.description != task.description &&
+        e.intensity != task.intensity
+    );
+    setTasks(result);
+  };
 
   return (
     <div className="container-app">
       <Form addTask={addTask} />
-      <Tasks allTasks={tasks} />
+      <Tasks allTasks={tasks} deleteTask={deleteTask} />
     </div>
   );
 }

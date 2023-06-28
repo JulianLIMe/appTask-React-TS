@@ -47,7 +47,7 @@ const Form = ({ addTask }: FormProps) => {
           required
           name="description"
           rows={2}
-          maxLength={175}
+          maxLength={180}
           placeholder="description"
           value={newTask.description}
           onChange={handleChange}
@@ -61,11 +61,21 @@ const Form = ({ addTask }: FormProps) => {
             onChange={handleChange}
             value={newTask.intensity}
           >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="1" style={{ background: "#fffbca" }}>
+              1
+            </option>
+            <option value="2" style={{ background: "#fffb9a" }}>
+              2
+            </option>
+            <option value="3" style={{ background: "#ffe157" }}>
+              3
+            </option>
+            <option value="4" style={{ background: "#ffab19" }}>
+              4
+            </option>
+            <option value="5" style={{ background: "#ff7910" }}>
+              5
+            </option>
           </select>
         </div>
 
