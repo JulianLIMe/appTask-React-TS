@@ -21,7 +21,7 @@
   border-radius: 8px;
   position: relative;
   width: 300px;
-  height: 60px;
+  height: 80px;
   text-align: center;
   font-size: 20px;
 }
@@ -42,12 +42,11 @@
 
 .container-modal .acept {
   padding: 4px 8px;
-  margin-top: 5px;
+  margin-top: 7px;
   border-radius: 7px;
   cursor: pointer;
-
-  position: relative;
+  border: 3px solid;
 }
 .container-modal .acept:hover {
-  border: 3px solid;
+  font-weight: bold;
 }

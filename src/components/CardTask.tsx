@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "./Modal";
 import { ITask } from "../type";
 import "../styles/CardTask.css";
 
@@ -8,11 +9,29 @@ interface CardProps {
 }
 
 const CardTask = ({ task, deleteTask }: CardProps) => {
+  const [openModal, setOpenModal] = useState<boolean>(false);
+
+  const handleModal = () => {
+    setOpenModal(!openModal);
+  };
+
+  const handleDelete = () => {
+    deleteTask(task);
+    handleModal();
+  };
+
   return (
-    <div className={`card-task intensity${task.intensity}`}>
-      <h2>{task.title}</h2>
-      <p>{task.description}</p>
-      <button onClick={() => deleteTask(task)}>🗑</button>
+    <div>
+      <div className={`card-task intensity${task.intensity}`}>
+        <h2>{task.title}</h2>
+        <p>{task.description}</p>
+        <button onClick={() => handleModal()}>🗑</button>
+      </div>
+      <Modal
+        openModal={openModal}
+        handleModal={handleModal}
+        handleDelete={handleDelete}
+      />
     </div>
   );
 };
