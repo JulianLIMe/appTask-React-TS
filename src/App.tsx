@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import Form from "./components/Form";
 import Tasks from "./components/Tasks";
-import Modal from "./components/Modal";
 import { ITask } from "./type";
 import "./App.css";
 
 function App(): JSX.Element {
   const [tasks, setTasks] = useState<ITask[]>([]);
-  const [openModal, setOpenModal] = useState<boolean>(false);
 
   const addTask = (task: ITask) => {
     const copy = [...tasks, task];
@@ -19,20 +17,15 @@ function App(): JSX.Element {
 
   const deleteTask = (task: ITask) => {
     const copy = [...tasks];
-    const result = copy.filter(
-      (e) =>
-        e.title != task.title &&
-        e.description != task.description &&
-        e.intensity != task.intensity
-    );
-    setTasks(result);
+    const newTasks: ITask[] = [];
+    copy.map((e) => e != task && newTasks.push(e));
+    setTasks(newTasks);
   };
 
   return (
     <div className="container-app">
       <Form addTask={addTask} />
       <Tasks allTasks={tasks} deleteTask={deleteTask} />
-      <Modal openModal={openModal} />
     </div>
   );
 }

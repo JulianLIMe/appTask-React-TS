@@ -1,0 +1,46 @@
+
+.card-task {
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: block;
+  position: relative;
+}
+
+.card-task h2 {
+  width: 90%;
+}
+
+.card-task p {
+  width: 90%;
+}
+
+.card-task button {
+  background-color: transparent;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-weight: bolder;
+  opacity: .4;
+  cursor: pointer;
+}
+.card-task button:hover {
+  opacity: 1;
+}
+
+.intensity1 {
+  background-color: #fffbca;
+}
+.intensity2 {
+  background-color: #fffb9a;
+}
+.intensity3 {
+  background-color: #ffe157;
+}
+.intensity4 {
+  background-color: #ffab19;
+}
+.intensity5 {
+  background-color: #ff7910;
+}

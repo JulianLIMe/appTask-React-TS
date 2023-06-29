@@ -45,6 +45,8 @@
   margin-top: 5px;
   border-radius: 7px;
   cursor: pointer;
+
+  position: relative;
 }
 .container-modal .acept:hover {
   border: 3px solid;
